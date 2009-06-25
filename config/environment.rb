@@ -7,8 +7,8 @@ Rails::Initializer.run do |config|
   config.gem 'authlogic'
   config.gem 'searchlogic'
   
-  config.gem 'haml-edge', :version => '>= 2.1.21', :lib => 'haml'
-  config.gem 'chriseppstein-compass', :version => '>= 0.6.13', :lib => 'compass'
+  config.gem 'haml-edge', :lib => 'haml'
+  config.gem 'chriseppstein-compass', :lib => 'compass'
   
   config.gem 'relevance-log_buddy', :lib => 'log_buddy', :source => 'http://gems.github.com'
 
