@@ -1,0 +1,13 @@
+= page_title 'Forgot Password'
+
+%p
+  Fill out the form below and instructions to reset your password will be emailed to you:
+
+- form_tag password_reset_path do
+  %div
+    = label_tag :email
+    = text_field_tag :email
+
+  .buttons.clearfix
+    = pretty_positive_button 'Reset my password'
+    = pretty_negative_button_link 'Cancel', login_path

@@ -1,0 +1,13 @@
+#sidebar
+  %ul
+    %li
+      = link_to "About", '/about'
+    %li
+      = link_to "FAQ", '/faq'
+    %li
+      = link_to "Privacy", '/privacy'
+    %li
+      = link_to "Contact", contact_path
+    - if current_user && current_user.admin?
+      %li
+        = link_to 'Admin', admin_path

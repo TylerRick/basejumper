@@ -1,0 +1,10 @@
+= page_title 'Signup'
+
+- form_for @user, :url => account_path do |f|
+  = f.error_messages
+
+  = render :partial => "form", :object => f
+
+  .buttons.clearfix
+    = pretty_positive_button 'Signup'
+    = pretty_negative_button_link 'Cancel', root_path

@@ -1,0 +1,24 @@
+= page_title 'Contact'
+
+- form_for @contact, :url => contact_path do |f|
+  = f.error_messages
+
+  %div
+    = f.label :name
+    = f.text_field :name
+
+  %div
+    = f.label :email
+    = f.text_field :email
+
+  %div
+    = f.label :subject
+    = f.text_field :subject
+
+  %div
+    = f.label :comment, 'Question/Comment'
+    = f.text_area :comment, :label => 'Question/Comment'
+
+  .buttons.clearfix
+    = pretty_positive_button 'Submit'
+    = pretty_button_link 'Clear', contact_path
