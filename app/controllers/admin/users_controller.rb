@@ -4,15 +4,15 @@ class Admin::UsersController < ApplicationController
   layout 'admin'
   
   active_scaffold :user do |config|
-    config.columns = [:login, :email, :password, :password_confirmation, :admin, 
+    self.columns = [:login, :email, :password, :password_confirmation, :admin, 
                       :created_at, :login_count, :last_request_at, 
                       :last_login_at, :current_login_at, :last_login_ip, :current_login_ip]
-    config.columns[:admin].form_ui = :checkbox
-    config.list.sorting = { :created_at => :desc }
-    config.list.columns.exclude :password, :password_confirmation, :last_request_at, :last_login_at, :current_login_at, :last_login_ip, :current_login_ip
-    config.create.columns.exclude :login_count, :last_request_at, :last_login_at, :current_login_at, :last_login_ip, :current_login_ip
-    config.update.columns.exclude :password, :password_confirmation, :login_count, :last_request_at, :last_login_at, :current_login_at, :last_login_ip, :current_login_ip
-    config.show.columns.exclude :password, :password_confirmation
+    self.columns[:admin].form_ui = :checkbox
+    self.list.sorting = { :created_at => :desc }
+    self.list.columns.exclude :password, :password_confirmation, :last_request_at, :last_login_at, :current_login_at, :last_login_ip, :current_login_ip
+    self.create.columns.exclude :login_count, :last_request_at, :last_login_at, :current_login_at, :last_login_ip, :current_login_ip
+    self.update.columns.exclude :password, :password_confirmation, :login_count, :last_request_at, :last_login_at, :current_login_at, :last_login_ip, :current_login_ip
+    self.show.columns.exclude :password, :password_confirmation
   end
   
   protected
